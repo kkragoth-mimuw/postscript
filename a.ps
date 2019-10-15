@@ -1,0 +1,23 @@
+ %! 
+ /nx 100 def
+ /ny 70 def
+ /phi 20 def
+ /size 100 def
+ /transx 20 def
+ /transy 150 def
+ /steps 12500 def
+ /cpoint {
+     steps div 360 mul dup
+     phi add nx mul sin 1 add size mul transx add
+     exch
+     ny mul cos 1 add size mul transy add
+ } def
+newpath
+0 cpoint moveto
+1 1 steps 1 sub { cpoint lineto } for
+closepath
+% 0.2 setlinewidth
+% 0.5 setgray
+0.5 0.6 0.8 setrgbcolor
+fill
+showpage
